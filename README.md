@@ -100,6 +100,16 @@ git rebase --continue // Continua a partir do ponto de conflito<br/>
 git rebase --abort // Aborta e volta ao estado original<br/>
 git rebase --skip // Alterações sejam descartadas.<br/>
 
+Para minimizar conflitos
+==================================
+- Commits com pouco conteúdo<br/>
+- Sincronização (pull) frequente do repositório remoto<br/>
+- Ferramentas visuais de merge http://kdiff3.sourceforge.net/, http://meldmerge.org/
+
+
+Comando avançados
+==================================
+==================================
 Desfazer alterações
 ==================================
 git checkout nome-do-arquivo // Volta o arquivo para o estado original antes de ser modificado.<br/>
@@ -122,12 +132,8 @@ git bisect bad HEAD // Informa que o HEAD é ruim<br/>
 git bisect good codigo-do-commit good // informar que o commit é bom<br/>
 -Vai informando se good e bad, para dizer se está no caminho certo ou errado para o Git encontrar o commit que está procurando.
 
-
-Para minimizar conflitos
 ==================================
-- Commits com pouco conteúdo<br/>
-- Sincronização (pull) frequente do repositório remoto<br/>
-- Ferramentas visuais de merge http://kdiff3.sourceforge.net/, http://meldmerge.org/
+==================================
 
 Criando alias
 ==========================

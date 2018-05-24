@@ -40,7 +40,9 @@ git remote // consulta os repositorios remotos existentes na pasta
 git remote add origin url-do-git // adicionar um repositório remoto, neste caso com o nome de origin
 git push origin master // envia para o repositorio remoto "origin" os arquivos na branch "master"
 
-
+Adicionar colaborador
+=============================
+Vá em setting > Collaborators > adiciona o user > Add Collaborator
 
 Boas práticas
 ============================

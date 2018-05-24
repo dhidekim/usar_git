@@ -73,7 +73,6 @@ git fetch origin // verifica todas as atualizações realizadas no repositório 
 
 Boas práticas
 ============================
-
 git branch // mostra as branch <br/>
 git checkout -b desenvolvimento // cria a branch desenvolvimento e altera para ela <br/>
 git add nome-arquivo nome-arquivo  // adiciona o arquivo para o commit, pode adicionar mais de um arquivo separando por espaço os nomes. <br/>
@@ -81,15 +80,54 @@ git commit -m "texto do commit" // envia o commit <br/>
 git checkout master // muda para a master <br/>
 git pull //Verifica o estado o repositorio remoto (master) <br/>
 git rebase master desenvolvimento  // tras os arquivos da master para o desenvolvimento  <br/>
+-----------------------------
+- Se encontrar algum conflito no git rebase master desenvolvimento <br/>
+- Arruma o conflito, depois adicionar e manda continuar o rebase <br/>
+git add nome-do-arquivo  <br/>
+git rebase --continue // Continua o rebase, que foi parado devido o conflito <br/>
+-----------------------------
 git checkout master // mudar para a master <br/>
 git merge desenvolvimento // Unir o desenvolvimento para a master <br/>
 git push // envia para o repositorio
 
-Em caso de conflito no git rebase master desenvolvimento <br/>
-Arruma o conflito depois adicionar e manda continuar o rebase <br/>
-git add nome-do-arquivo  <br/>
-git rebase --continue <br/>
+Identificando conflitos
+==================================
+O Git utiliza os caracteres >, < e =. Entre o < e o = fica o conteúdo antigo e entre o > e = fica o conteúdo novo.
 
+Rebase
+==================================
+git rebase --continue // Continua a partir do ponto de conflito<br/>
+git rebase --abort // Aborta e volta ao estado original<br/>
+git rebase --skip // Alterações sejam descartadas.<br/>
+
+Desfazer alterações
+==================================
+git checkout nome-do-arquivo // Volta o arquivo para o estado original antes de ser modificado.<br/>
+git reset HEAD nome-do-arquivo //Volta o arquivos se ele já foi dado o git add, estado index.<br/>
+git reset codigo-do-commit // Desfaz o commit no log, mas não altera o arquivo.<br/>
+git revert codigo-do-commit //Desfaz um commit antigo, reverte as alterações e da o direito de dar um novo nome do commit com a alteração desfeita
+
+Usar área temporário
+==================================
+git stash // coloca em area temporária<br/>
+git stash list // lista áreas temporárias guardadas<br/>
+git stash pop // retorna para o último stash<br/>
+git stash apply stash@{0} // retorna para o stash no número determinado<br/>
+git stash drop // apaga os stash
+
+Localizar um commit
+===================================
+git bisect start // Inicia um bisect<br/>
+git bisect bad HEAD // Informa que o HEAD é ruim<br/>
+git bisect good codigo-do-commit good // informar que o commit é bom<br/>
+-Vai informando se good e bad, para dizer se está no caminho certo ou errado para o Git encontrar o commit que está procurando.
+
+
+Para minimizar conflitos
+==================================
+- Commits com pouco conteúdo<br/>
+- Sincronização (pull) frequente do repositório remoto<br/>
+- Ferramentas visuais de merge http://kdiff3.sourceforge.net/, http://meldmerge.org/
 
 Criando alias
 ==========================

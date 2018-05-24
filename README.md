@@ -41,7 +41,7 @@ git push origin master // envia para o repositorio remoto "origin" os arquivos n
 
 Adicionar colaborador
 =============================
-V� em setting > Collaborators > adiciona o user > Add Collaborator
+Vá em setting > Collaborators > adiciona o user > Add Collaborator
 
 Boas práticas
 ============================

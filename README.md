@@ -118,6 +118,7 @@ git reset HEAD nome-do-arquivo //Volta o arquivos se ele já foi dado o git add,
 git reset codigo-do-commit // Desfaz o commit no log, mas não altera o arquivo. As alterações são removidas do histórico local de commits, do index, mas não do working directory`.<br/>
 git reset --hard codigo-do-commit // As alterações são removidas do histórico local de commits, mas não são removidas do index.<br/>
 git reset --soft codigo-do-commit // As alterações são removidas do histórico local de commits, mas não são removidas do index.<br/>
+boista
 
 git revert codigo-do-commit //Desfaz um commit antigo, reverte as alterações e da o direito de dar um novo nome do commit com a alteração desfeita
 

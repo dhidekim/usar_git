@@ -39,6 +39,11 @@ git remote // consulta os repositorios remotos existentes na pasta <br/>
 git remote -v // verifica o endereço do repositório remoto <br/>
 git remote add origin url-do-git // adicionar um repositório remoto, neste caso com o nome de origin <br/>
 git push origin master // envia para o repositorio remoto "origin" os arquivos na branch "master"
+git push -u origin master // envia para o repositorio remoto "origin" os arquivos na branch "master" -u //atrela a branch remota à local, assim não é necessário passar a origem e a branch, ficando somente: git push, para as próximas
+
+Copia um repositório do Git
+=============================
+git clone link-do-git //copia o repositorio na máquina local
 
 Adicionar colaborador
 =============================

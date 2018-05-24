@@ -72,7 +72,7 @@ Verificando atualizações do repositório
 git fetch origin // verifica todas as atualizações realizadas no repositório origin
 
 Boas práticas
-============================
+================================
 git branch // mostra as branch <br/>
 git checkout -b desenvolvimento // cria a branch desenvolvimento e altera para ela <br/>
 git add nome-arquivo nome-arquivo  // adiciona o arquivo para o commit, pode adicionar mais de um arquivo separando por espaço os nomes. <br/>
@@ -112,9 +112,13 @@ Comando avançados
 ==================================
 Desfazer alterações
 ==================================
-git checkout nome-do-arquivo // Volta o arquivo para o estado original antes de ser modificado.<br/>
-git reset HEAD nome-do-arquivo //Volta o arquivos se ele já foi dado o git add, estado index.<br/>
-git reset codigo-do-commit // Desfaz o commit no log, mas não altera o arquivo.<br/>
+git checkout nome-do-arquivo // Volta o arquivo para o estado original antes de ser modificado. Descartando alterações no Working Directory<br/>
+git checkout -- design // Restaura o arquivo e não muda de branch //-- indica nome de arquivo (não esqueça do espaço entre o nome e o --)<br/>
+git reset HEAD nome-do-arquivo //Volta o arquivos se ele já foi dado o git add, estado index. Descartando alterações no index<br/>
+git reset codigo-do-commit // Desfaz o commit no log, mas não altera o arquivo. As alterações são removidas do histórico local de commits, do index, mas não do working directory`.<br/>
+git reset --hard codigo-do-commit // As alterações são removidas do histórico local de commits, mas não são removidas do index.<br/>
+git reset --soft codigo-do-commit // As alterações são removidas do histórico local de commits, mas não são removidas do index.<br/>
+
 git revert codigo-do-commit //Desfaz um commit antigo, reverte as alterações e da o direito de dar um novo nome do commit com a alteração desfeita
 
 Usar área temporário

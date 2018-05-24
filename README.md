@@ -29,17 +29,17 @@ git config --global user.email "email@email.com" //Configura o e-mail do usuári
 
 Logs e ver alterações
 =============================
-git log // Ver log dos commits <br/>
+git log // Ver log dos commits // tecla "q", para sair <br/>
 git whatchanged // detalha mostrando quais arquivos foram alterados // tecla "q", para sair <br/>
 git whatchanged -p // detalha em que parte do arquivo foi alterado // tecla "q", para sair
 
-Criar repositorio remoto e atualizar arquivos
+Criar repositório remoto e atualizar arquivos
 =============================
 git remote // consulta os repositorios remotos existentes na pasta <br/>
 git remote -v // verifica o endereço do repositório remoto <br/>
 git remote add origin url-do-git // adicionar um repositório remoto, neste caso com o nome de origin <br/>
 git push origin master // envia para o repositorio remoto "origin" os arquivos na branch "master"
-git push -u origin master // envia para o repositorio remoto "origin" os arquivos na branch "master" -u //atrela a branch remota à local, assim não é necessário passar a origem e a branch, ficando somente: git push, para as próximas
+git push -u origin master // envia para o repositorio remoto "origin" os arquivos na branch "master" -u //vincula a branch remota à local, assim não é necessário passar a origem e a branch, ficando somente: git push, para as próximas
 
 Copia um repositório do Git
 =============================
@@ -49,10 +49,32 @@ Adicionar colaborador
 =============================
 Vá em setting > Collaborators > adiciona o user > Add Collaborator
 
+Branch
+=============================
+git branch // mostra as branch locais <br/>
+git branch -r // mostra as branch remotas <br/>
+git branch -a // mostra as branch remotas e locais <br/>
+git branch -t design origin/design // Cria a branch local(design) e vinculada a branch remota origin/design <br/>
+git branch -d  // Apaga uma branch, mas se não estiver sincronizada utilizada -D
+
+git branch design // cria a branch design<br/>
+git checkout design // mudar para a design <br/>
+git checkout -b desenvolvimento // cria a branch desenvolvimento e altera para ela <br/>
+git checkout -t origin/design // Cria a branch design do repositório remoto com o mesmo nome, mudar para ela e cria um link para as branchs.
+
+Removendo Branch remota
+================================
+git push -d origin design // Remove Branch remota design<br/>
+git push origin :design // Remove Branch remota design
+
+Verificando atualizações do repositório
+================================
+git fetch origin // verifica todas as atualizações realizadas no repositório origin
+
 Boas práticas
 ============================
 
-git branch // verifica as branch <br/>
+git branch // mostra as branch <br/>
 git checkout -b desenvolvimento // cria a branch desenvolvimento e altera para ela <br/>
 git add nome-arquivo nome-arquivo  // adiciona o arquivo para o commit, pode adicionar mais de um arquivo separando por espaço os nomes. <br/>
 git commit -m "texto do commit" // envia o commit <br/>

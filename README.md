@@ -113,10 +113,10 @@ Comando avançados
 Desfazer alterações
 ==================================
 git checkout nome-do-arquivo // Desfaz a alteração do arquivo, se não foi dado o git add. Descartando alterações no Working Directory<br/>
-git checkout -- design // Restaura o arquivo e não muda de branch //-- indica nome de arquivo (não esqueça do espaço entre o nome e o --)<br/>
+git checkout -- design // Restaura o arquivo e não o branch //-- indica nome de arquivo (não esqueça do espaço entre o nome e o --)<br/>
 git reset HEAD nome-do-arquivo //Desfaz o git add , estado index. Descartando alterações no index // Para penúltimo commit pode ser digitado HEAD~1, ou HEAD~2 antepenultimo e assim por diante.<br/>
 git reset codigo-do-commit // Desfaz o commit no log, mas não altera o arquivo. As alterações são removidas do histórico local de commits, do index, mas não do working directory`.<br/>
-git reset --hard codigo-do-commit // As alterações são removidas do histórico local de commits, mas não são removidas do index.<br/>
+git reset --hard HEAD~1 // Usando esse comando, descartamos definitivamente as mudanças feitas no último commit. As alterações são removidas do histórico local de commits, mas não são removidas do index.<br/>
 git reset --soft codigo-do-commit // As alterações são removidas do histórico local de commits, mas não são removidas do index.<br/>
 
 git revert codigo-do-commit //Desfaz um commit antigo, reverte as alterações e da o direito de dar um novo nome do commit com a alteração desfeita
@@ -128,6 +128,7 @@ git stash list // lista áreas temporárias guardadas<br/>
 git stash pop // retorna para o último stash<br/>
 git stash apply stash@{0} // retorna para o stash no número determinado<br/>
 git stash drop // apaga os stash
+git stash clear // apaga todos os stash
 
 Localizar um commit
 ===================================
@@ -139,10 +140,36 @@ git bisect good codigo-do-commit good // informar que o commit é bom<br/>
 ==================================
 ==================================
 
-Criando alias
-==========================
+Logs
+==================================
+git log --graph // mostra um gráfico de desenvolvimento
+git log --pretty='%an realizou commit em %ad: %s' --graph // Personaliza a mensagem de log
 
-!git checkout master && git  pull && git checkout desenvolvimento && git rebase master && git checkout master && git merge desenvolvimento && git push
+
+Criando alias
+==================================
+- Edita um arquivo [seuRepositorio]/.git/config
+[alias]
+	st = status
+	co = checkout
+	ls = ls-files
+	cm = commit
+	ss = stash
+	lo = !git log --pretty='%an (commit: %h) fez: %s' --graph
+[color]
+	publica = !git checkout master && git pull && git checkout desenvolvimento && git rebase master && git checkout master && git merge desenvolvimento && git push
+	diff = auto
+
+Acompanhando um repositorio
+=================================
+- Github te permite fazer um fork de qualquer projeto aberto ao público, que copia o projeto para a sua conta, com histórico, e te permite abrir um pull request.
+- Ao ativar o watch, o Github te notifica a cada atividade que ocorre no repositório, te permitindo acompanhar praticamente em tempo real o andamento do projeto.
+
+Fazendo merges avançados com Cherry Pick
+================================
+git cherry-pick codigo-commit // Permite selecionar um commit para ser enviado para master antes de outros commit. 
+git cherry-pick abcd..1234 //Intervalo de commits, escreva o hash do commit mais antigo seguido por dois pontos sem espaço e seguido pelo hash do commit mais recente. 
+
 
 
 

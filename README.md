@@ -36,6 +36,7 @@ git whatchanged -p // detalha em que parte do arquivo foi alterado // tecla "q",
 Criar repositorio remoto e atualizar arquivos
 =============================
 git remote // consulta os repositorios remotos existentes na pasta <br/>
+git remote -v // verifica o endereço do repositório remoto <br/>
 git remote add origin url-do-git // adicionar um repositório remoto, neste caso com o nome de origin <br/>
 git push origin master // envia para o repositorio remoto "origin" os arquivos na branch "master"
 

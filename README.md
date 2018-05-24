@@ -112,9 +112,9 @@ Comando avançados
 ==================================
 Desfazer alterações
 ==================================
-git checkout nome-do-arquivo // Volta o arquivo para o estado original antes de ser modificado. Descartando alterações no Working Directory<br/>
+git checkout nome-do-arquivo // Desfaz a alteração do arquivo, se não foi dado o git add. Descartando alterações no Working Directory<br/>
 git checkout -- design // Restaura o arquivo e não muda de branch //-- indica nome de arquivo (não esqueça do espaço entre o nome e o --)<br/>
-git reset HEAD nome-do-arquivo //Volta o arquivos se ele já foi dado o git add, estado index. Descartando alterações no index<br/>
+git reset HEAD nome-do-arquivo //Desfaz o git add , estado index. Descartando alterações no index // Para penúltimo commit pode ser digitado HEAD~1, ou HEAD~2 antepenultimo e assim por diante.<br/>
 git reset codigo-do-commit // Desfaz o commit no log, mas não altera o arquivo. As alterações são removidas do histórico local de commits, do index, mas não do working directory`.<br/>
 git reset --hard codigo-do-commit // As alterações são removidas do histórico local de commits, mas não são removidas do index.<br/>
 git reset --soft codigo-do-commit // As alterações são removidas do histórico local de commits, mas não são removidas do index.<br/>
